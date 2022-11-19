@@ -1,0 +1,47 @@
+{
+  "name": "template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "postinstall": "prisma generate",
+    "lint": "next lint",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^2.0.12",
+    "@chakra-ui/react": "^2.4.1",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mdi/font": "^7.0.96",
+    "@next-auth/prisma-adapter": "^1.0.4",
+    "@prisma/client": "^4.5.0",
+    "framer-motion": "^7.6.7",
+    "i18next": "^22.0.6",
+    "next": "13.0.2",
+    "next-auth": "^4.15.1",
+    "next-i18next": "^12.1.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-i18next": "^12.0.0",
+    "react-use": "^17.4.0",
+    "zod": "^3.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "autoprefixer": "^10.4.7",
+    "eslint": "^8.26.0",
+    "eslint-config-next": "13.0.2",
+    "postcss": "^8.4.14",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
+    "prisma": "^4.5.0",
+    "tailwindcss": "^3.2.0",
+    "typescript": "^4.8.4"
+  }
+}

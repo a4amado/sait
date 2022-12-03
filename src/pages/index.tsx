@@ -1,21 +1,40 @@
-import React from 'react';
+import { Button, Flex, Center, Input, Spinner } from "@chakra-ui/react";
+import React from "react";
+import Axios from "axios";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { FcMenu } from "react-icons/fc";
+import { HiLanguage } from "react-icons/hi2";
 
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { GetServerSideProps } from 'next';
-import { useTranslation } from 'next-i18next';
-import Navbar from '../comps/navbar';
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const t = await serverSideTranslations(ctx.locale || `${ctx.defaultLocale}`, ["common"])
-  
-  return { props: {
-    ...t
-  }}
-};
+const queryWords = async (q: string): Promise<Array<string>> => {
+  return new Promise((res) => {
+    setTimeout(() => {
+      res([q, "2", "3", "4", "5", "6", "7", "8", "9", "10"])
+    }, 5000)
+  })
+}
 
-const Page = () => {
-  const t = useTranslation();
-  
-  return <Navbar />
-};
+import useSwr from "swr";
+import { useFirstMountState } from "react-use"
+import { css } from "@emotion/react";
+import PageContainer from "../comp/pageContainer";
+export default function Page() {
+  const firstMount = useFirstMountState()
+  const [words, setWords] = React.useState<Array<any>>([])
+  const [q, setQ] = React.useState("");
+  const s = useSwr(["GE", q], (_, q): Promise<Array<string>> => queryWords(q), {
+    revalidateOnMount: false,
+    revalidateIfStale: false
+  })
 
-export default Page;
+  React.useEffect(() => {
+    if (firstMount) return;
+    s.mutate()
+  }, [q]);
+
+  return <PageContainer>
+      <form method="GET" action="/search" style={{ width: "100%" }}>
+        <Input type="text" name="q" />
+        <Button mx="auto" type="submit">Search</Button>
+      </form>
+  </PageContainer>
+}

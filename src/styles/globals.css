@@ -1,7 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    /* font-size: 10px; */
+html, body {
+  height: 100%;
+}
+
+#__next {
+  height: 100%;
+}
+* {
+  box-sizing: border-box!important;
+  /* border: 1px solid #080!important; */
+  font-family: 'Noto Sans Arabic', sans-serif;
+
+}
+.words:nth-child(even) {
+  background-color: #D6EEEE;
+  margin: 5px 0;
+}
+
+
+tr > th {
+  font-weight: bold;
+  text-align: center;
+  width: fit-content;
+  
+
+}
+
+
+td {
+  display: table-cell;
+  vertical-align: inherit;
+  
+padding: 3px 6px;
 }

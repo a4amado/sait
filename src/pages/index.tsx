@@ -1,9 +1,5 @@
-import { Button, Flex, Center, Input, Spinner } from "@chakra-ui/react";
+import { Button, Input } from "@chakra-ui/react";
 import React from "react";
-import Axios from "axios";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import { FcMenu } from "react-icons/fc";
-import { HiLanguage } from "react-icons/hi2";
 
 const queryWords = async (q: string): Promise<Array<string>> => {
   return new Promise((res) => {

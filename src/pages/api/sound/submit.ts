@@ -10,6 +10,7 @@ import mime from "mime-types"
 
 const storage  = multer.diskStorage({
     destination: async (req, file, cb) => {
+        
         cb(null, path.join(process.cwd(),"files"))
     },
     filename: (req, file, cb) => {

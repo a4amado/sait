@@ -44,14 +44,14 @@ export default function NavBar() {
                                             </MenuButton>
                                             <MenuList css={``}>
                                                 <MenuItem>
-                                                    <Link href="/contribute">
+                                                    <a href="/contribute">
                                                         شارك بصوتك
-                                                    </Link>
+                                                    </a>
                                                 </MenuItem>
                                                 <MenuItem>
-                                                    <Link href="/auth">
+                                                    <a href="/auth">
                                                         الدخول
-                                                    </Link>
+                                                    </a>
                                                 </MenuItem>
                                             </MenuList>
                                         </>

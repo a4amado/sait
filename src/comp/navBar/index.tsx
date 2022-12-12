@@ -23,9 +23,8 @@ export default function NavBar() {
                                     <MenuItem>
                                         <Link href="/contribute">شارك بصوتك</Link>
                                     </MenuItem>
-                                    
                                     <MenuItem>
-                                        <Link href="/contribute">شارك بصوتك</Link>
+                                        <Link href="/auth">الدخول</Link>
                                     </MenuItem>
                                     
                                     
@@ -47,7 +46,7 @@ export default function NavBar() {
                                 <MenuButton as={Button} isActive={isOpen}>
                                     <HiLanguage />
                                 </MenuButton>
-                                <MenuList css={``}>
+                                <MenuList>
                                     <MenuItem>شارك بصوتك</MenuItem>
                                     <MenuItem>راجع صوتاََ</MenuItem>
                                     

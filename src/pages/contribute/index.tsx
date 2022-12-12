@@ -1,11 +1,10 @@
-import { Flex, Button, Text, Center, Circle, Spinner, Toast, useToast } from "@chakra-ui/react"
+import { Flex, Button, Text, Center, Spinner, useToast } from "@chakra-ui/react"
 import { useHotkeys } from "react-hotkeys-hook"
 import PageContainer from "../../comp/pageContainer"
 import useRecorder from "@wmik/use-media-recorder"
 import React from "react"
 import FormData from "form-data"
 import Axios from "axios"
-import { useQuery } from "@tanstack/react-query"
 
 
 export default function Page() {
@@ -24,7 +23,7 @@ export default function Page() {
     }, [recorder.status]);
     
     const [loading, setLoading] = React.useState(false);
-    const [error, setError] = React.useState(false);
+    const [_error, setError] = React.useState(false);
 
 
 
@@ -35,7 +34,7 @@ export default function Page() {
             setLoading(true);
             setError(false);
 
-            const { data } = await Axios({
+            const _data = await Axios({
                 url: "/api/sound/submit",
                 data: sound,
                 method: "POST",

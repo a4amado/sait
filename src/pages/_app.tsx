@@ -4,9 +4,9 @@ import { appWithTranslation } from 'next-i18next';
 import { ChakraProvider } from '@chakra-ui/react'
 
 
-const MyApp: AppType<{ session: Session | null }> = ({
+const MyApp: AppType = ({
   Component,
-  pageProps: { session, ...pageProps },
+  pageProps: { ...pageProps },
 }) => {
   return (
     

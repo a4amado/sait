@@ -44,14 +44,14 @@ export default function NavBar() {
                                             </MenuButton>
                                             <MenuList css={``}>
                                                 <MenuItem>
-                                                    <a href="/contribute">
+                                                    <Link href="/contribute">
                                                         شارك بصوتك
-                                                    </a>
+                                                    </Link>
                                                 </MenuItem>
                                                 <MenuItem>
-                                                    <a href="/auth">
+                                                    <Link href="/auth">
                                                         الدخول
-                                                    </a>
+                                                    </Link>
                                                 </MenuItem>
                                             </MenuList>
                                         </>
@@ -61,7 +61,9 @@ export default function NavBar() {
                         </Center>
                     </Flex>
                     <Flex flexGrow={1}>
-                        <Center w="full">Sait</Center>
+                        <Center w="full">
+                            <Link href="/">Sait</Link>
+                        </Center>
                     </Flex>
                     <Flex flexGrow={0} w="65px">
                         <Center w="full">

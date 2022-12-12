@@ -3,13 +3,16 @@ import '../styles/globals.css'
 import { appWithTranslation } from 'next-i18next'
 import { ChakraProvider } from '@chakra-ui/react'
 import Loading from '../comp/loading'
+import { Suspense } from 'react'
 
 const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
     return (
-        <ChakraProvider>
-            <Loading />
-            <Component {...pageProps} />
-        </ChakraProvider>
+        <Suspense fallback=".">
+            <ChakraProvider>
+                <Loading />
+                <Component {...pageProps} />
+            </ChakraProvider>
+        </Suspense>
     )
 }
 

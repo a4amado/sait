@@ -150,6 +150,9 @@ export default function Page() {
                     >
                         Stop
                     </Button>
+                    <Button onClick={submit} flexGrow={1}>
+                        Submit
+                    </Button>
                 </Flex>
             </Flex>
         </PageContainer>

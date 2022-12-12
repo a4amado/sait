@@ -43,13 +43,23 @@ export default function NavBar() {
                                                 <FcMenu />
                                             </MenuButton>
                                             <MenuList css={``}>
-                                                <MenuItem>
-                                                    <Link href="/contribute">
+                                                <MenuItem padding="0">
+                                                    <Link
+                                                        style={{
+                                                            padding: '5px 10px',
+                                                        }}
+                                                        href="/contribute"
+                                                    >
                                                         شارك بصوتك
                                                     </Link>
                                                 </MenuItem>
-                                                <MenuItem>
-                                                    <Link href="/auth">
+                                                <MenuItem padding="0">
+                                                    <Link
+                                                        style={{
+                                                            padding: '5px 10px',
+                                                        }}
+                                                        href="/auth"
+                                                    >
                                                         الدخول
                                                     </Link>
                                                 </MenuItem>

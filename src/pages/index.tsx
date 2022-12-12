@@ -9,23 +9,14 @@ const queryWords = async (q: string): Promise<Array<string>> => {
   })
 }
 
-import useSwr from "swr";
-import { useFirstMountState } from "react-use"
-import { css } from "@emotion/react";
+
 import PageContainer from "../comp/pageContainer";
 export default function Page() {
-  const firstMount = useFirstMountState()
-  const [words, setWords] = React.useState<Array<any>>([])
+  
+  
   const [q, setQ] = React.useState("");
-  const s = useSwr(["GE", q], (_, q): Promise<Array<string>> => queryWords(q), {
-    revalidateOnMount: false,
-    revalidateIfStale: false
-  })
 
-  React.useEffect(() => {
-    if (firstMount) return;
-    s.mutate()
-  }, [q]);
+
 
   return <PageContainer>
       <form method="GET" action="/search" style={{ width: "100%" }}>

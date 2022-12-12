@@ -17,6 +17,6 @@
     "noUncheckedIndexedAccess": true,
      "allowSyntheticDefaultImports": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.mjs", "next-i18next.config.js", "next.config.js", "next.config.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.mjs", "next-i18next.config.js", "next.config.js", "next.config.js", "server.mts"],
   "exclude": ["node_modules"]
 }

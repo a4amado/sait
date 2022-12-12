@@ -6,8 +6,6 @@ export default function Page() {
 
     return <PageContainer>
         <>
-
-            
             <Flex display="flex" flexDirection="column" width="full">
             <form method="GET" action="/search" style={{ width: "100%" }}>
                 <Input type="text" name="q" />
@@ -33,6 +31,5 @@ export default function Page() {
                 </Flex>
             </Flex>
         </>
-
     </PageContainer>
 }

@@ -10,7 +10,7 @@ export default function Page() {
                 <Flex display="flex" flexDirection="column" width="full">
                     <Search />
                     <Flex display="flex" flexDirection="column">
-                        {Array.from({ length: 10 }, () =>
+                        {Array.from({ length: 3 }, () =>
                             Math.random().toString()
                         ).map((_, i) => {
                             return (

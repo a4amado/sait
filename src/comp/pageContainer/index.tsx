@@ -9,8 +9,7 @@ export default function PageContainer({ children }: React.PropsWithChildren) {
     return (
         <Flex
             w="100%"
-            // height="100%"
-            // maxH="100vh"
+            height="none"
             maxW="600px"
             display="flex"
             flexDir="column"
@@ -18,6 +17,7 @@ export default function PageContainer({ children }: React.PropsWithChildren) {
             px="20px"
             boxShadow="0px 0px 18px -1px rgba(94,94,94,0.46)"
             justifyContent="stretch"
+            minH="full"
         >
             <NavBar />
             <Flex w="full" flexGrow={1} h="full">

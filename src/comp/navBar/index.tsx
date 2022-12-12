@@ -9,7 +9,7 @@ import { HiLanguage } from "react-icons/hi2";
 export default function NavBar() {
     return <>
         <Flex flexDirection="column" display="flex" flexGrow={0} background="#fff" zIndex={5}>
-        </Flex><Flex w="full" justifyContent="stretch" flexDirection="row" height="65px" zIndex={5}>
+        <Flex w="full" justifyContent="stretch" flexDirection="row" height="65px" zIndex={5}>
             <Flex flexGrow={0} w="65px">
                 <Center w="full">
 
@@ -57,6 +57,7 @@ export default function NavBar() {
                     
                 </Center>
             </Flex>
+        </Flex>
         </Flex>
     </>
 

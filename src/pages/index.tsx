@@ -1,15 +1,17 @@
-import { Button, Input } from "@chakra-ui/react";
+import { Button, Input, Flex } from "@chakra-ui/react";
 
 import PageContainer from "../comp/pageContainer";
+import Search from "../comp/search";
+
+
 export default function Page() {
-  
+
 
 
 
   return <PageContainer>
-      <form method="GET" action="/search" style={{ width: "100%" }}>
-        <Input type="text" name="q" />
-        <Button mx="auto" type="submit">Search</Button>
-      </form>
+      <Search />
+    
+
   </PageContainer>
 }

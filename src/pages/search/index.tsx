@@ -1,16 +1,14 @@
 import { Input, Flex, Center, Button } from "@chakra-ui/react";
 import PageContainer from "../../comp/pageContainer";
 import { HiOutlineSpeakerWave } from "react-icons/hi2"
+import Search from "../../comp/search";
 
 export default function Page() {
 
     return <PageContainer>
         <>
             <Flex display="flex" flexDirection="column" width="full">
-            <form method="GET" action="/search" style={{ width: "100%" }}>
-                <Input type="text" name="q" />
-                <Button mx="auto" type="submit" margin="10px auto" display="block">Search</Button>
-            </form>
+            <Search />
             <Flex  display="flex" flexDirection="column">
                 {
                     Array.from({ length: 10 }, () => Math.random().toString()).map((_, i) => {

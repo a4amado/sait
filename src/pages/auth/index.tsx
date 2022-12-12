@@ -1,6 +1,7 @@
 import PageContainer from "../../comp/pageContainer"
 import { Formik, Field, FieldConfig, Form, FieldValidator, FormikHandlers } from "formik"
 import { Button, FormControl, Input, FormLabel, Text, Heading, Checkbox, CheckboxGroup, CheckboxIcon, TabPanels, TabPanel, TabList, Tab, Tabs } from "@chakra-ui/react"
+import {  addDoc, getDoc, collection  } from "firebase/firestore"
 
 function FeildConfigMK(props: FieldConfig): FieldConfig {
     return props
@@ -8,8 +9,9 @@ function FeildConfigMK(props: FieldConfig): FieldConfig {
 
 
 import * as yup from "yup";
-import { auth, storage } from "../../firebase/init";
+import { auth, db, storage } from "../../firebase/init";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { doc } from "firebase/firestore";
 
 
 export default function Page() {
@@ -40,7 +42,8 @@ function Register() {
         console.log(e);
         try {
             const data = await createUserWithEmailAndPassword(auth, e.email, e.password)
-            console.log(data);
+            
+
         } catch (error) {
             console.log(error);
         }

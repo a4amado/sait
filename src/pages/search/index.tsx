@@ -3,11 +3,15 @@ import PageContainer from '../../comp/pageContainer'
 
 import Search from '../../comp/search'
 import NextLink from 'next/link'
+import Head from 'next/head'
 
 export default function Page() {
     return (
         <PageContainer>
             <>
+                <Head>
+                    <title>أنا</title>
+                </Head>
                 <Flex display="flex" flexDirection="column" width="full">
                     <Search />
                     <Flex display="flex" flexDirection="column">

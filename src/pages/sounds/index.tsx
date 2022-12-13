@@ -13,10 +13,14 @@ import {
     PopoverCloseButton,
     PopoverAnchor,
 } from '@chakra-ui/react'
+import Head from 'next/head'
 
 export default function Page() {
     return (
         <PageContainer>
+            <Head>
+                <title>كيف اقول أنا</title>
+            </Head>
             <>
                 <Flex display="flex" flexDirection="column" width="full">
                     <Search />

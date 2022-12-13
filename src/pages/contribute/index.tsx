@@ -142,16 +142,16 @@ export default function Page() {
                         onClick={() => recorder.startRecording()}
                         flexGrow={1}
                     >
-                        Start
+                        تَسجيل
                     </Button>
                     <Button
                         onClick={() => recorder.stopRecording()}
                         flexGrow={1}
                     >
-                        Stop
+                        صَهِِ!
                     </Button>
                     <Button onClick={submit} flexGrow={1}>
-                        Submit
+                        ارسل
                     </Button>
                 </Flex>
             </Flex>

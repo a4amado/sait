@@ -25,19 +25,11 @@ import {
     Toast,
     useToast,
 } from '@chakra-ui/react'
-import { addDoc, getDoc, collection } from 'firebase/firestore'
-
 function FeildConfigMK(props: FieldConfig): FieldConfig {
     return props
 }
 
 import * as yup from 'yup'
-import { auth, db, storage } from '../../firebase/init'
-import {
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-} from 'firebase/auth'
-import { doc } from 'firebase/firestore'
 
 export default function Page() {
     return (
@@ -86,9 +78,15 @@ function Register() {
         <Formik
             initialValues={initialValue}
             validationSchema={yup.object().shape({
-                email: yup.string().email().required(),
-                password: yup.string().required(),
-                checkbox: yup.boolean().required().oneOf([true], 'Required'),
+                email: yup
+                    .string()
+                    .email('هذا البريد الاكتروني غير صالح')
+                    .required('هذا الحقل مطلوب'),
+                password: yup.string().required('هذا الحقل مطلوب'),
+                checkbox: yup
+                    .boolean()
+                    .required()
+                    .oneOf([true], 'هذا الحقل مطلوب'),
             })}
             enableReinitialize
             onSubmit={Login}
@@ -96,7 +94,7 @@ function Register() {
             {(props) => (
                 <Form style={{ width: '100%' }} onSubmit={props.handleSubmit}>
                     <Heading>التسجيل: </Heading>
-                    <FormControl width="full">
+                    <FormControl width="full" m="10px 0">
                         <FormLabel>البريد الالكتروني:</FormLabel>
                         <Field
                             {...FeildConfigMK({
@@ -105,9 +103,9 @@ function Register() {
                                 type: 'email',
                             })}
                         />
-                        <Text color="red.700">{props.errors.email}</Text>
+                        <Text color="red">{props.errors.email}</Text>
                     </FormControl>
-                    <FormControl width="full">
+                    <FormControl width="full" m="10px 0">
                         <FormLabel>كلمة المرور: </FormLabel>
                         <Field
                             {...FeildConfigMK({
@@ -118,14 +116,15 @@ function Register() {
                         />
                         <Text color="red.700">{props.errors.password}</Text>
                     </FormControl>
-                    <FormControl>
+                    <FormControl m="10px 0">
                         <Field
                             {...FeildConfigMK({
                                 name: 'checkbox',
-                                type: 'checkbox',
-                                value: 'Accept',
+                                type: 'checkbox'
                             })}
+                            
                         />
+                        <Text display="inline">أُوافق علي الشروط</Text>
                         <Text color="red.700">{props.errors.checkbox}</Text>
                     </FormControl>
                     <FormControl>
@@ -154,8 +153,11 @@ function Login() {
         <Formik
             initialValues={initialValue}
             validationSchema={yup.object().shape({
-                email: yup.string().email().required(),
-                password: yup.string().required(),
+                email: yup
+                    .string()
+                    .email('هذا البريد الاكتروني غير صالح')
+                    .required('هذا الحقل مطلوب'),
+                password: yup.string().required('هذا الحقل مطلوب'),
             })}
             enableReinitialize
             onSubmit={Login}
@@ -163,7 +165,7 @@ function Login() {
             {(props) => (
                 <Form style={{ width: '100%' }} onSubmit={props.handleSubmit}>
                     <Heading>تسجيل الدُخول</Heading>
-                    <FormControl width="full">
+                    <FormControl width="full" m="10px 0">
                         <FormLabel>البريد الالكتروني: </FormLabel>
                         <Field
                             {...FeildConfigMK({
@@ -172,9 +174,9 @@ function Login() {
                                 type: 'email',
                             })}
                         />
-                        <Text color="red.700">{props.errors.email}</Text>
+                        <Text color="red">{props.errors.email}</Text>
                     </FormControl>
-                    <FormControl width="full">
+                    <FormControl width="full" m="10px 0">
                         <FormLabel>كَلمة المرور: </FormLabel>
                         <Field
                             {...FeildConfigMK({
@@ -183,7 +185,7 @@ function Login() {
                                 type: 'password',
                             })}
                         />
-                        <Text color="red.700">{props.errors.password}</Text>
+                        <Text color="red">{props.errors.password}</Text>
                     </FormControl>
 
                     <FormControl>

@@ -30,10 +30,14 @@ function FeildConfigMK(props: FieldConfig): FieldConfig {
 }
 
 import * as yup from 'yup'
+import Head from 'next/head'
 
 export default function Page() {
     return (
         <PageContainer>
+            <Head>
+                <title>تسجيل الدخول</title>
+            </Head>
             <Tabs width="full">
                 <TabList
                     width="full"

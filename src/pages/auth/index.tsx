@@ -120,9 +120,8 @@ function Register() {
                         <Field
                             {...FeildConfigMK({
                                 name: 'checkbox',
-                                type: 'checkbox'
+                                type: 'checkbox',
                             })}
-                            
                         />
                         <Text display="inline">أُوافق علي الشروط</Text>
                         <Text color="red.700">{props.errors.checkbox}</Text>

@@ -7,12 +7,14 @@ import {
     Button,
     MenuItem,
     MenuProps,
+    Heading,
 } from '@chakra-ui/react'
 import Link from 'next/link'
 
 import { FcMenu } from 'react-icons/fc'
 import { TbLogin } from 'react-icons/tb'
 import { BsFillMicFill } from 'react-icons/bs'
+import { HiHome } from 'react-icons/hi2'
 
 export default function NavBar() {
     return (
@@ -27,7 +29,7 @@ export default function NavBar() {
                 <Flex
                     w="full"
                     justifyContent="stretch"
-                    flexDirection="row"
+                    flexDirection="row-reverse"
                     height="65px"
                     zIndex={5}
                 >
@@ -88,8 +90,10 @@ export default function NavBar() {
                         </Center>
                     </Flex>
                     <Flex flexGrow={1}>
-                        <Center w="full">
-                            <Link href="/">Sait</Link>
+                        <Center w="full" justifyContent="flex-start">
+                            <Heading size="lg">
+                                <Link href="/">قٌلها</Link>
+                            </Heading>
                         </Center>
                     </Flex>
                 </Flex>

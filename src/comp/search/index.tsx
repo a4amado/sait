@@ -12,9 +12,9 @@ export default function Search(props: any) {
             style={{ width: '100%', margin: '10px 0' }}
         >
             <Input
-                placeholder="إِنّي أَنا لَيثُ العَرينِ وَمَن لَهُ * قَلبُ الجَبانِ مُحَيَّرٌ مَدهوشُ - عنترة بن شداد"
                 type="text"
                 name="q"
+                placeholder="أَنا الَّذي نَظَرَ الأَعمَى إلى أَدَبي * وأَسمَعَتْ كَلِماتي مَن بِهِ صَمَمُ - أبو الطيب المتنبي"
             />
             <Button display="block" m="15px auto" type="submit">
                 إبحث

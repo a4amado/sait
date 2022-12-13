@@ -49,8 +49,8 @@ export default function Page() {
                     flexDirection="row"
                     justifyContent="stretch"
                 >
-                    <Tab>Login</Tab>
-                    <Tab>Register</Tab>
+                    <Tab>الدَخول</Tab>
+                    <Tab>التسجيل</Tab>
                 </TabList>
                 <TabPanels>
                     <TabPanel>
@@ -95,9 +95,9 @@ function Register() {
         >
             {(props) => (
                 <Form style={{ width: '100%' }} onSubmit={props.handleSubmit}>
-                    <Heading>Register:</Heading>
+                    <Heading>التسجيل: </Heading>
                     <FormControl width="full">
-                        <FormLabel>Email Adress: </FormLabel>
+                        <FormLabel>البريد الالكتروني:</FormLabel>
                         <Field
                             {...FeildConfigMK({
                                 name: 'email',
@@ -108,7 +108,7 @@ function Register() {
                         <Text color="red.700">{props.errors.email}</Text>
                     </FormControl>
                     <FormControl width="full">
-                        <FormLabel>Password: </FormLabel>
+                        <FormLabel>كلمة المرور: </FormLabel>
                         <Field
                             {...FeildConfigMK({
                                 name: 'password',
@@ -129,7 +129,7 @@ function Register() {
                         <Text color="red.700">{props.errors.checkbox}</Text>
                     </FormControl>
                     <FormControl>
-                        <Button type="submit">Register</Button>
+                        <Button type="submit">سَجل</Button>
                     </FormControl>
                 </Form>
             )}
@@ -162,9 +162,9 @@ function Login() {
         >
             {(props) => (
                 <Form style={{ width: '100%' }} onSubmit={props.handleSubmit}>
-                    <Heading>Login:</Heading>
+                    <Heading>تسجيل الدُخول</Heading>
                     <FormControl width="full">
-                        <FormLabel>Email Adress: </FormLabel>
+                        <FormLabel>البريد الالكتروني: </FormLabel>
                         <Field
                             {...FeildConfigMK({
                                 name: 'email',
@@ -175,7 +175,7 @@ function Login() {
                         <Text color="red.700">{props.errors.email}</Text>
                     </FormControl>
                     <FormControl width="full">
-                        <FormLabel>Password: </FormLabel>
+                        <FormLabel>كَلمة المرور: </FormLabel>
                         <Field
                             {...FeildConfigMK({
                                 name: 'password',
@@ -187,7 +187,9 @@ function Login() {
                     </FormControl>
 
                     <FormControl>
-                        <Button type="submit">Login</Button>
+                        <Button m="10px 0" type="submit">
+                            دخول
+                        </Button>
                     </FormControl>
                 </Form>
             )}

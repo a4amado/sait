@@ -11,7 +11,8 @@ import {
 import Link from 'next/link'
 
 import { FcMenu } from 'react-icons/fc'
-import { HiLanguage } from 'react-icons/hi2'
+import { TbLogin } from 'react-icons/tb'
+import { BsFillMicFill } from 'react-icons/bs'
 
 export default function NavBar() {
     return (
@@ -47,10 +48,17 @@ export default function NavBar() {
                                                     <Link
                                                         style={{
                                                             padding: '5px 10px',
-                                                            width: "100%"
+                                                            width: '100%',
                                                         }}
                                                         href="/contribute"
                                                     >
+                                                        <BsFillMicFill
+                                                            style={{
+                                                                display:
+                                                                    'inline',
+                                                                margin: '5px',
+                                                            }}
+                                                        />
                                                         شارك بصوتك
                                                     </Link>
                                                 </MenuItem>
@@ -58,10 +66,17 @@ export default function NavBar() {
                                                     <Link
                                                         style={{
                                                             padding: '5px 10px',
-                                                            width: "100%"
+                                                            width: '100%',
                                                         }}
                                                         href="/auth"
                                                     >
+                                                        <TbLogin
+                                                            style={{
+                                                                display:
+                                                                    'inline',
+                                                                margin: '5px',
+                                                            }}
+                                                        />
                                                         الدخول
                                                     </Link>
                                                 </MenuItem>

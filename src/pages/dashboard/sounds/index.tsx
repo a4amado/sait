@@ -1,3 +1,10 @@
+import PageContainer from "../../../comp/pageContainer"
+
+
+
 export default function Page() {
-    return <p>s</p>
+    return <PageContainer>
+
+        ss
+    </PageContainer>
 }

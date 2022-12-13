@@ -9,7 +9,6 @@ export default function PageContainer({ children }: React.PropsWithChildren) {
     return (
         <Flex
             w="100%"
-            height="none"
             maxW="600px"
             display="flex"
             flexDir="column"

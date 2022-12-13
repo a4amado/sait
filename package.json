@@ -32,6 +32,7 @@
     "form-data": "^4.0.0",
     "formik": "^2.2.9",
     "framer-motion": "^7.6.7",
+    "http-status-codes": "^2.2.0",
     "i18next": "^22.0.6",
     "luxon": "^3.1.1",
     "mime-types": "^2.1.35",
@@ -58,6 +59,7 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.14",
+    "@types/http-status-codes": "^1.2.0",
     "@types/luxon": "^3.1.0",
     "@types/mime-types": "^2.1.1",
     "@types/multer": "^1.4.7",

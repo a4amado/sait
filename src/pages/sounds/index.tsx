@@ -25,7 +25,7 @@ export default function Page() {
                 <Flex display="flex" flexDirection="column" width="full">
                     <Search />
                     <Flex display="flex" flexDirection="column">
-                        {Array.from({ length: 3 }, () =>
+                        {Array.from({ length: 30 }, () =>
                             Math.random().toString()
                         ).map((_, i) => {
                             return (

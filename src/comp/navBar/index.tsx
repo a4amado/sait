@@ -47,6 +47,7 @@ export default function NavBar() {
                                                     <Link
                                                         style={{
                                                             padding: '5px 10px',
+                                                            width: "100%"
                                                         }}
                                                         href="/contribute"
                                                     >
@@ -57,6 +58,7 @@ export default function NavBar() {
                                                     <Link
                                                         style={{
                                                             padding: '5px 10px',
+                                                            width: "100%"
                                                         }}
                                                         href="/auth"
                                                     >

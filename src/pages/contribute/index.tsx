@@ -39,7 +39,7 @@ export default function Page() {
             setLoading(true)
             setError(false)
             if (!recorder.mediaBlob) return false
-            await uploadBytes(ref(storage, cuid()), recorder.mediaBlob)
+            // await uploadBytes(ref(storage, cuid()), recorder.mediaBlob)
             setLoading(false)
             recorder.clearMediaBlob()
             recorder.clearMediaStream()

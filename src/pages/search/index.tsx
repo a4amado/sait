@@ -2,6 +2,17 @@ import { Input, Flex, Center, Button } from '@chakra-ui/react'
 import PageContainer from '../../comp/pageContainer'
 import { HiOutlineSpeakerWave } from 'react-icons/hi2'
 import Search from '../../comp/search'
+import {
+    Popover,
+    PopoverTrigger,
+    PopoverContent,
+    PopoverHeader,
+    PopoverBody,
+    PopoverFooter,
+    PopoverArrow,
+    PopoverCloseButton,
+    PopoverAnchor,
+} from '@chakra-ui/react'
 
 export default function Page() {
     return (
@@ -28,16 +39,6 @@ export default function Page() {
                                     padding="5px"
                                     borderRadius="5px"
                                 >
-                                    <Flex
-                                        w="full"
-                                        flexGrow={1}
-                                        fontSize="3xl"
-                                        margin="0 10px"
-                                        justifyContent="end"
-                                    >
-                                        مَثال
-                                    </Flex>
-
                                     <Flex width="50px" flexGrow={0}>
                                         <Center w="full" h="50px">
                                             <Button
@@ -51,6 +52,45 @@ export default function Page() {
                                                 <HiOutlineSpeakerWave />
                                             </Button>
                                         </Center>
+                                    </Flex>
+                                    <Flex
+                                        w="full"
+                                        flexGrow={1}
+                                        fontSize="3xl"
+                                        margin="0 10px"
+                                    >
+                                        مَثال
+                                    </Flex>
+
+                                    <Flex>
+                                        <Popover>
+                                            <PopoverTrigger>
+                                                <Button>قَيّم</Button>
+                                            </PopoverTrigger>
+                                            <PopoverContent>
+                                                <PopoverArrow />
+                                                <PopoverCloseButton />
+                                                <PopoverHeader>
+                                                    ما تَقييمك لهذا النُطق ؟
+                                                </PopoverHeader>
+                                                <PopoverBody>
+                                                    <Flex
+                                                        width="full"
+                                                        display="flex"
+                                                        flexDirection="row"
+                                                        justifyContent="space-evenly"
+                                                    >
+                                                        <Button>
+                                                            لا غُبار علية.
+                                                        </Button>
+                                                        <Button>
+                                                            لابأس به.
+                                                        </Button>
+                                                        <Button>رديء</Button>
+                                                    </Flex>
+                                                </PopoverBody>
+                                            </PopoverContent>
+                                        </Popover>
                                     </Flex>
                                 </Flex>
                             )

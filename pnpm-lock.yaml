@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@ant-design/icons': ^4.8.0
   '@chakra-ui/react': ^2.4.2
+  '@emotion/cache': ^11.10.5
   '@emotion/react': ^11.10.5
   '@emotion/styled': ^11.10.5
   '@firebase/storage': ^0.10.0
@@ -55,6 +56,8 @@ specifiers:
   react-use-audio-player: ^1.2.6
   react-wavy-audio: ^1.0.3
   rimraf: ^3.0.2
+  stylis: ^4.1.3
+  stylis-plugin-rtl: ^2.1.1
   swr: ^1.3.0
   tailwindcss: ^3.2.0
   ts-node: ^10.9.1
@@ -65,6 +68,7 @@ specifiers:
 dependencies:
   '@ant-design/icons': 4.8.0_biqbaboplfbrettd7655fr4n2y
   '@chakra-ui/react': 2.4.2_fqfjrcf4r5ejjaxw4ez4knwbra
+  '@emotion/cache': 11.10.5
   '@emotion/react': 11.10.5_fan5qbzahqtxlm5dzefqlqx5ia
   '@emotion/styled': 11.10.5_otcjdfkheatawhug6fwk7ldzni
   '@firebase/storage': 0.10.0
@@ -99,6 +103,8 @@ dependencies:
   react-use: 17.4.0_biqbaboplfbrettd7655fr4n2y
   react-use-audio-player: 1.2.6_react@18.2.0
   react-wavy-audio: 1.0.3_biqbaboplfbrettd7655fr4n2y
+  stylis: 4.1.3
+  stylis-plugin-rtl: 2.1.1_stylis@4.1.3
   swr: 1.3.0_react@18.2.0
   yup: 0.32.11
   zod: 3.19.1
@@ -3237,6 +3243,11 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
     dev: true
+
+  /cssjanus/2.1.0:
+    resolution: {integrity: sha512-kAijbny3GmdOi9k+QT6DGIXqFvL96aksNlGr4Rhk9qXDZYWUojU4bRc3IHWxdaLNOqgEZHuXoe5Wl2l7dxLW5g==}
+    engines: {node: '>=10.0.0'}
+    dev: false
 
   /csstype/3.1.1:
     resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
@@ -6452,6 +6463,15 @@ packages:
     dependencies:
       client-only: 0.0.1
       react: 18.2.0
+    dev: false
+
+  /stylis-plugin-rtl/2.1.1_stylis@4.1.3:
+    resolution: {integrity: sha512-q6xIkri6fBufIO/sV55md2CbgS5c6gg9EhSVATtHHCdOnbN/jcI0u3lYhNVeuI65c4lQPo67g8xmq5jrREvzlg==}
+    peerDependencies:
+      stylis: 4.x
+    dependencies:
+      cssjanus: 2.1.0
+      stylis: 4.1.3
     dev: false
 
   /stylis/4.1.3:

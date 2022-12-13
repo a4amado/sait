@@ -75,28 +75,6 @@ export default function NavBar() {
                             <Link href="/">Sait</Link>
                         </Center>
                     </Flex>
-                    <Flex flexGrow={0} w="65px">
-                        <Center w="full">
-                            <Menu>
-                                {({ isOpen }) => {
-                                    return (
-                                        <>
-                                            <MenuButton
-                                                as={Button}
-                                                isActive={isOpen}
-                                            >
-                                                <HiLanguage />
-                                            </MenuButton>
-                                            <MenuList>
-                                                <MenuItem>شارك بصوتك</MenuItem>
-                                                <MenuItem>راجع صوتاََ</MenuItem>
-                                            </MenuList>
-                                        </>
-                                    )
-                                }}
-                            </Menu>
-                        </Center>
-                    </Flex>
                 </Flex>
             </Flex>
         </>

@@ -22,6 +22,8 @@ import {
     TabList,
     Tab,
     Tabs,
+    Toast,
+    useToast,
 } from '@chakra-ui/react'
 import { addDoc, getDoc, collection } from 'firebase/firestore'
 
@@ -64,16 +66,18 @@ export default function Page() {
 }
 
 function Register() {
+    const toast = useToast()
     const initialValue = { email: '', password: '', checkbox: false }
 
     async function Login(e: typeof initialValue) {
         console.log(e)
         try {
-            const data = await createUserWithEmailAndPassword(
-                auth,
-                e.email,
-                e.password
-            )
+            setTimeout(() => {
+                toast({
+                    status: 'success',
+                    title: 'تم التسجيل بنجاح.',
+                })
+            }, 5000)
         } catch (error) {
             console.log(error)
         }
@@ -134,14 +138,16 @@ function Register() {
 }
 
 function Login() {
+    const toast = useToast()
     const initialValue = { email: '', password: '' }
     async function Login(e: typeof initialValue) {
         try {
-            const data = await signInWithEmailAndPassword(
-                auth,
-                e.email,
-                e.password
-            )
+            setTimeout(() => {
+                toast({
+                    status: 'success',
+                    title: 'تم التسجيل بنجاح.',
+                })
+            }, 5000)
         } catch (error) {}
     }
     return (

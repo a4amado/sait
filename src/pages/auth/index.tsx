@@ -1,12 +1,5 @@
 import PageContainer from '../../comp/pageContainer'
-import {
-    Formik,
-    Field,
-    FieldConfig,
-    Form,
-    FieldValidator,
-    FormikHandlers,
-} from 'formik'
+import { Formik, Field, FieldConfig, Form } from 'formik'
 import {
     Button,
     FormControl,
@@ -14,17 +7,14 @@ import {
     FormLabel,
     Text,
     Heading,
-    Checkbox,
-    CheckboxGroup,
-    CheckboxIcon,
     TabPanels,
     TabPanel,
     TabList,
     Tab,
     Tabs,
-    Toast,
     useToast,
 } from '@chakra-ui/react'
+
 function FeildConfigMK(props: FieldConfig): FieldConfig {
     return props
 }
@@ -96,9 +86,9 @@ function Register() {
             onSubmit={Login}
         >
             {(props) => (
-                <Form style={{ width: '100%' }} onSubmit={props.handleSubmit}>
+                <Form className="w-full" onSubmit={props.handleSubmit}>
                     <Heading>التسجيل: </Heading>
-                    <FormControl width="full" m="10px 0">
+                    <FormControl className="w-full mx-0 my-2">
                         <FormLabel>البريد الالكتروني:</FormLabel>
                         <Field
                             {...FeildConfigMK({
@@ -109,7 +99,7 @@ function Register() {
                         />
                         <Text color="red">{props.errors.email}</Text>
                     </FormControl>
-                    <FormControl width="full" m="10px 0">
+                    <FormControl className="w-full mx-0 my-2">
                         <FormLabel>كلمة المرور: </FormLabel>
                         <Field
                             {...FeildConfigMK({
@@ -120,7 +110,7 @@ function Register() {
                         />
                         <Text color="red.700">{props.errors.password}</Text>
                     </FormControl>
-                    <FormControl m="10px 0">
+                    <FormControl className="w-full mx-0 my-2">
                         <Field
                             {...FeildConfigMK({
                                 name: 'checkbox',
@@ -168,7 +158,7 @@ function Login() {
             {(props) => (
                 <Form style={{ width: '100%' }} onSubmit={props.handleSubmit}>
                     <Heading>تسجيل الدُخول</Heading>
-                    <FormControl width="full" m="10px 0">
+                    <FormControl className="w-full mx-0 my-2">
                         <FormLabel>البريد الالكتروني: </FormLabel>
                         <Field
                             {...FeildConfigMK({
@@ -179,7 +169,7 @@ function Login() {
                         />
                         <Text color="red">{props.errors.email}</Text>
                     </FormControl>
-                    <FormControl width="full" m="10px 0">
+                    <FormControl className="w-full mx-0 my-2">
                         <FormLabel>كَلمة المرور: </FormLabel>
                         <Field
                             {...FeildConfigMK({

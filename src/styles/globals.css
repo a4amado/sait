@@ -16,6 +16,7 @@ body {
     box-sizing: border-box !important;
     /* border: 1px solid #080!important; */
     font-family: 'Noto Sans Arabic', sans-serif;
+    user-select: none;
 }
 .words:nth-child(even) {
     background-color: #d6eeee;

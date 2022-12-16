@@ -1,4 +1,4 @@
-import { Input, Flex, Center, Button, Link } from '@chakra-ui/react'
+import { Flex, Button } from '@chakra-ui/react'
 import PageContainer from '../../comp/pageContainer'
 
 import Search from '../../comp/search'
@@ -12,21 +12,21 @@ export default function Page() {
                 <Head>
                     <title>أنا</title>
                 </Head>
-                <Flex display="flex" flexDirection="column" width="full">
+                <Flex className="flex flex-col w-full">
                     <Search />
-                    <Flex display="flex" flexDirection="column">
+                    <Flex className="flex flex-col">
                         {Array.from({ length: 30 }, () =>
                             Math.random().toString()
                         ).map((_, i) => {
                             return (
                                 <Button
-                                    margin="4px 0"
+                                    className="my-1"
                                     key={i}
                                     as={NextLink}
                                     href="/sounds?id=:ID"
                                     passHref
                                 >
-                                    كَلمة عربية.{' '}
+                                    كَلمة عربية.
                                 </Button>
                             )
                         })}

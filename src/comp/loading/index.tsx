@@ -57,18 +57,11 @@ const Loading = () => {
                 animate={controle}
                 initial="active"
             >
-                <Chakra.Box
-                    display="flex"
-                    w="100vw"
-                    h="100vh"
-                    justifyContent="center"
-                    alignItems="center"
-                    flexDir="column"
-                >
+                <Chakra.Box className="flex flex-col w-screen h-screen align-center justify-center">
                     <Flex textAlign="center" fontSize="35px">
                         sait.3adl.dev
                     </Flex>
-                    <Chakra.Spinner size="lg" m={10} />
+                    <Chakra.Spinner size="lg" className="m-2" />
                 </Chakra.Box>
                 <Chakra.Spinner />
             </Chakra.Box>

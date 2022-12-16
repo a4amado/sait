@@ -7,21 +7,9 @@ import NavBar from '../navBar'
 
 export default function PageContainer({ children }: React.PropsWithChildren) {
     return (
-        <Flex
-            w="100%"
-            maxW="600px"
-            display="flex"
-            flexDir="column"
-            mx="auto"
-            px="20px"
-            boxShadow="0px 0px 18px -1px rgba(94,94,94,0.46)"
-            justifyContent="stretch"
-            minH="full"
-        >
+        <Flex className="w-dull max-w-2xl flex flex-col mx-auto p-3 justify-stretch min-h-full shadow-2xl">
             <NavBar />
-            <Flex w="full" flexGrow={1} h="full">
-                {children}
-            </Flex>
+            <Flex className="w-full h-full flex-grow">{children}</Flex>
         </Flex>
     )
 }

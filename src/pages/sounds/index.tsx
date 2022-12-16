@@ -14,6 +14,11 @@ import {
     PopoverAnchor,
 } from '@chakra-ui/react'
 import Head from 'next/head'
+import { TbCopy } from 'react-icons/tb'
+
+function copy_to_clipboard(text: string): void {
+    navigator.clipboard.writeText(text)
+}
 
 export default function Page() {
     return (
@@ -22,9 +27,9 @@ export default function Page() {
                 <title>كيف اقول أنا</title>
             </Head>
             <>
-                <Flex display="flex" flexDirection="column" width="full">
+                <Flex className="flex flex-col w-full">
                     <Search />
-                    <Flex display="flex" flexDirection="column">
+                    <Flex className="flex flex-col">
                         {Array.from({ length: 30 }, () =>
                             Math.random().toString()
                         ).map((_, i) => {
@@ -32,39 +37,31 @@ export default function Page() {
                                 <Flex
                                     key={i}
                                     border="1px solid #0088000f"
-                                    _hover={{
-                                        backgroundColor: '#9ca3af3b',
-                                        cursor: 'pointer',
-                                    }}
-                                    justifyContent="stretch"
-                                    alignItems="center"
-                                    display="flex"
-                                    height="50px"
-                                    padding="5px"
-                                    margin="5px"
-                                    borderRadius="5px"
+                                    className="m-1 p-1 h-12 flex align-center justify-center hover:pointe"
                                 >
-                                    <Flex width="50px" flexGrow={0}>
-                                        <Center w="full" h="50px">
+                                    <Flex className="h-full w-12 flex-grow-0">
+                                        <Center className="h-full w-full">
                                             <Button
-                                                border="1px solid #0040a9"
                                                 _hover={{
                                                     borderColor: '#1677ff',
                                                     color: '#1677ff',
                                                 }}
-                                                padding="5px"
+                                                className="p-1 border-spacing-1 border-cyan-200"
                                             >
                                                 <HiOutlineSpeakerWave />
                                             </Button>
                                         </Center>
                                     </Flex>
-                                    <Flex
-                                        w="full"
-                                        flexGrow={1}
-                                        fontSize="3xl"
-                                        margin="0 10px"
-                                    >
+                                    <Flex className="my-0 mx-2 text-3xl flex-grow w-full">
                                         مَثال
+                                        <Button
+                                            onClick={() =>
+                                                copy_to_clipboard('TEXT')
+                                            }
+                                            variant="ghost"
+                                        >
+                                            <TbCopy />
+                                        </Button>
                                     </Flex>
 
                                     <Flex>

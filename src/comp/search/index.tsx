@@ -52,9 +52,11 @@ export default function Search(props: any) {
                 name="q"
                 placeholder="ورميتُ سهم الحبِّ أقصدُ قلبها ‏ فأصاب سهمي عينها فاعورَّتِ"
             />
-            <Button onClick={con.onOpen} display="block" m="15px auto">
-                {' '}
-                {/* type="submit"> */}
+            <Button
+                onClick={con.onOpen}
+                className="block my-3 mx-auto"
+                type="submit"
+            >
                 إبحث
             </Button>
         </form>

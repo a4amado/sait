@@ -100,34 +100,18 @@ export default function Page() {
 
     return (
         <PageContainer>
-            <Flex display="flex" flexDirection="column" width="full">
-                <Center height="250px">
+            <Flex className="flex flex-col w-full">
+                <Center className="h-80">
                     <Text fontSize="7xl">السلام عليكم</Text>
                 </Center>
-                <Flex width="full">
-                    <audio
-                        src={url}
-                        preload=""
-                        controls
-                        style={{ width: '100%' }}
-                    />
+                <Flex className="w-full">
+                    <audio src={url} preload="" controls className="w-full" />
                 </Flex>
-                <Flex
-                    flexDirection="row"
-                    justifyContent="stretch"
-                    height="250px"
-                    gap={10}
-                    margin="10px 0"
-                    position="relative"
-                >
+                <Flex className="flex flex-row justify-stretch h-80 gap-2 my-2 mx-0 relative">
                     <Center
-                        position="absolute"
-                        width="full"
-                        height="full"
-                        background="white"
-                        zIndex="99999"
-                        display={loading ? 'flex' : 'none'}
-                        flexDirection="column"
+                        className={`${
+                            loading ? 'flex' : 'none'
+                        } flex-col absloute w-full h-full bg-slate-200 z-[9999]`}
                     >
                         <Spinner />
                         <Text>إنتظر لحظة</Text>

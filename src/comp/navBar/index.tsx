@@ -12,29 +12,16 @@ import {
 import Link from 'next/link'
 
 import { FcMenu } from 'react-icons/fc'
-import { TbLogin } from 'react-icons/tb'
+import { TbCopy, TbLogin } from 'react-icons/tb'
 import { BsFillMicFill } from 'react-icons/bs'
-import { HiHome } from 'react-icons/hi2'
 
 export default function NavBar() {
     return (
         <>
-            <Flex
-                flexDirection="column"
-                display="flex"
-                flexGrow={0}
-                background="#fff"
-                zIndex={5}
-            >
-                <Flex
-                    w="full"
-                    justifyContent="stretch"
-                    flexDirection="row-reverse"
-                    height="65px"
-                    zIndex={5}
-                >
-                    <Flex flexGrow={0} w="65px">
-                        <Center w="full">
+            <Flex className="flex flex-col flex-grow-0 bg-white z-[5]">
+                <Flex className="w-full justify-strctch flex flex-row-reverse h-15 z-[5]">
+                    <Flex className="h-15 flex-grow-0">
+                        <Center className="w-full">
                             <Menu>
                                 {({ isOpen }) => {
                                     return (
@@ -45,40 +32,22 @@ export default function NavBar() {
                                             >
                                                 <FcMenu />
                                             </MenuButton>
-                                            <MenuList css={``}>
-                                                <MenuItem padding="0">
+                                            <MenuList>
+                                                <MenuItem className="p-0 m-0">
                                                     <Link
-                                                        style={{
-                                                            padding: '5px 10px',
-                                                            width: '100%',
-                                                        }}
+                                                        className="w-full px-1 py-2"
                                                         href="/contribute"
                                                     >
-                                                        <BsFillMicFill
-                                                            style={{
-                                                                display:
-                                                                    'inline',
-                                                                margin: '5px',
-                                                            }}
-                                                        />
+                                                        <BsFillMicFill className="inline m-1" />
                                                         شارك بصوتك
                                                     </Link>
                                                 </MenuItem>
-                                                <MenuItem padding="0">
+                                                <MenuItem className="p-0">
                                                     <Link
-                                                        style={{
-                                                            padding: '5px 10px',
-                                                            width: '100%',
-                                                        }}
+                                                        className="inline m-1"
                                                         href="/auth"
                                                     >
-                                                        <TbLogin
-                                                            style={{
-                                                                display:
-                                                                    'inline',
-                                                                margin: '5px',
-                                                            }}
-                                                        />
+                                                        <TbLogin className="inline m-1" />
                                                         الدخول
                                                     </Link>
                                                 </MenuItem>
@@ -89,8 +58,8 @@ export default function NavBar() {
                             </Menu>
                         </Center>
                     </Flex>
-                    <Flex flexGrow={1}>
-                        <Center w="full" justifyContent="flex-start">
+                    <Flex className="flex-grow-1">
+                        <Center className="justify-star w-full">
                             <Heading size="lg">
                                 <Link href="/">قٌلها</Link>
                             </Heading>

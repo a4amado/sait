@@ -58,12 +58,12 @@ export default function NavBar() {
                             </Menu>
                         </Center>
                     </Flex>
-                    <Flex className="flex-grow-1">
-                        <Center className="justify-star w-full">
+                    <Flex className="flex-grow-1 w-full justify-star">
+                        
                             <Heading size="lg">
                                 <Link href="/">قٌلها</Link>
                             </Heading>
-                        </Center>
+                        
                     </Flex>
                 </Flex>
             </Flex>

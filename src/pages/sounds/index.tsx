@@ -1,4 +1,4 @@
-import { Input, Flex, Center, Button } from '@chakra-ui/react'
+import { Input, Flex, Center, Button, useToast } from '@chakra-ui/react'
 import PageContainer from '../../comp/pageContainer'
 import { HiOutlineSpeakerWave } from 'react-icons/hi2'
 import Search from '../../comp/search'
@@ -21,6 +21,7 @@ function copy_to_clipboard(text: string): void {
 }
 
 export default function Page() {
+    const toast = useToast()
     return (
         <PageContainer>
             <Head>
@@ -55,9 +56,16 @@ export default function Page() {
                                     <Flex className="my-0 mx-2 text-3xl flex-grow w-full">
                                         مَثال
                                         <Button
-                                            onClick={() =>
+                                            onClick={() => {
                                                 copy_to_clipboard('TEXT')
-                                            }
+                                                toast({
+                                                    status: 'success',
+                                                    title: 'تَم النَسخ',
+                                                    isClosable: false,
+                                                    duration: 2000,
+                                                    position: 'top-right',
+                                                })
+                                            }}
                                             variant="ghost"
                                         >
                                             <TbCopy />

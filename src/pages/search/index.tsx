@@ -17,19 +17,17 @@ export default function Page() {
                     <Flex className="flex flex-col">
                         {Array.from({ length: 30 }, () =>
                             Math.random().toString()
-                        ).map((_, i) => {
-                            return (
-                                <Button
-                                    className="my-1"
-                                    key={i}
-                                    as={NextLink}
-                                    href="/sounds?id=:ID"
-                                    passHref
-                                >
-                                    كَلمة عربية.
-                                </Button>
-                            )
-                        })}
+                        ).map((_, i) => (
+                            <Button
+                                className="my-1"
+                                key={i}
+                                as={NextLink}
+                                href="/sounds?id=:ID"
+                                passHref
+                            >
+                                كَلمة عربية.
+                            </Button>
+                        ))}
                     </Flex>
                 </Flex>
             </>

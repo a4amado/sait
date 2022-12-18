@@ -1,4 +1,3 @@
-import { Button, Input, Flex } from '@chakra-ui/react'
 import Head from 'next/head'
 
 import PageContainer from '../comp/pageContainer'

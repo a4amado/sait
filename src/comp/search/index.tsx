@@ -1,38 +1,8 @@
-import {
-    Box,
-    Button,
-    Center,
-    Input,
-    InputGroup,
-    InputLeftAddon,
-    Portal,
-    Spinner,
-    useBoolean,
-    useDisclosure,
-    useToast,
-} from '@chakra-ui/react'
-import { useRouter } from 'next/router'
-
-import isArabic from '../../server/common/is_arabic'
-import {
-    Popover,
-    PopoverTrigger,
-    PopoverContent,
-    PopoverHeader,
-    PopoverBody,
-    PopoverFooter,
-    PopoverArrow,
-    PopoverCloseButton,
-    PopoverAnchor,
-} from '@chakra-ui/react'
+import { Button, Input, useDisclosure } from '@chakra-ui/react'
 import React from 'react'
 import { useClickAway } from 'react-use'
-import useAxios from '../../hooks/useAxios'
 
-export default function Search(props: any) {
-    const Router = useRouter()
-    const [list, setList] = React.useState([])
-
+export default function Search() {
     const con = useDisclosure()
     // const q = useAxios({ }) Config on production
 

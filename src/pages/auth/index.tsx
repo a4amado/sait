@@ -1,26 +1,33 @@
-import PageContainer from '../../comp/pageContainer'
-import { Formik, Field, FieldConfig, Form } from 'formik'
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import type { FieldConfig } from 'formik'
+import { Field, Form, Formik } from 'formik'
+import Head from 'next/head'
+import React from 'react'
+import * as yup from 'yup'
+
 import {
     Button,
     FormControl,
-    Input,
     FormLabel,
-    Text,
     Heading,
-    TabPanels,
-    TabPanel,
-    TabList,
+    Input,
     Tab,
+    TabList,
+    TabPanel,
+    TabPanels,
     Tabs,
-    useToast,
+    Text,
 } from '@chakra-ui/react'
+
+
+import PageContainer from '../../comp/pageContainer'
+import { auth } from '../../firebase/init'
 
 function FeildConfigMK(props: FieldConfig): FieldConfig {
     return props
 }
 
-import * as yup from 'yup'
-import Head from 'next/head'
+const GoogleAuth = new GoogleAuthProvider()
 
 export default function Page() {
     return (
@@ -28,6 +35,7 @@ export default function Page() {
             <Head>
                 <title>تسجيل الدخول</title>
             </Head>
+
             <Tabs width="full">
                 <TabList
                     width="full"
@@ -45,6 +53,9 @@ export default function Page() {
                     <TabPanel>
                         <Register />
                     </TabPanel>
+                    <Button onClick={() => signInWithPopup(auth, GoogleAuth)}>
+                        signInWithPopup
+                    </Button>
                 </TabPanels>
             </Tabs>
         </PageContainer>
@@ -52,21 +63,11 @@ export default function Page() {
 }
 
 function Register() {
-    const toast = useToast()
     const initialValue = { email: '', password: '', checkbox: false }
 
-    async function Login(e: typeof initialValue) {
-        console.log(e)
-        try {
-            setTimeout(() => {
-                toast({
-                    status: 'success',
-                    title: 'تم التسجيل بنجاح.',
-                })
-            }, 5000)
-        } catch (error) {
-            console.log(error)
-        }
+    function Login() {
+        console.log("ss");
+        
     }
     return (
         <Formik
@@ -130,17 +131,10 @@ function Register() {
 }
 
 function Login() {
-    const toast = useToast()
     const initialValue = { email: '', password: '' }
-    async function Login(e: typeof initialValue) {
-        try {
-            setTimeout(() => {
-                toast({
-                    status: 'success',
-                    title: 'تم التسجيل بنجاح.',
-                })
-            }, 5000)
-        } catch (error) {}
+    function Login() {
+        console.log("");
+        
     }
     return (
         <Formik

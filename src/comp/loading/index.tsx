@@ -1,9 +1,5 @@
-import {
-    AnimationControls,
-    motion,
-    useAnimationControls,
-    Variants,
-} from 'framer-motion'
+import type { AnimationControls, Variants } from 'framer-motion'
+import { motion, useAnimationControls } from 'framer-motion'
 import Router from 'next/router'
 import React, { memo } from 'react'
 import { useFirstMountState } from 'react-use'

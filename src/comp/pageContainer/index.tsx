@@ -1,8 +1,5 @@
-import { Flex, Center } from '@chakra-ui/react'
-import { Button } from 'antd'
+import { Flex } from '@chakra-ui/react'
 import React from 'react'
-import { FcMenu } from 'react-icons/fc'
-import { HiLanguage } from 'react-icons/hi2'
 import NavBar from '../navBar'
 
 export default function PageContainer({ children }: React.PropsWithChildren) {

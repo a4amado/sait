@@ -1,5 +1,6 @@
-import Axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
-import { StatusCodes } from 'http-status-codes'
+import type { AxiosRequestConfig, AxiosResponse } from 'axios'
+import Axios from 'axios'
+import type { StatusCodes } from 'http-status-codes'
 import React from 'react'
 
 function useAxios() {

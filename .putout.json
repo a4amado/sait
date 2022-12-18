@@ -1,0 +1,8 @@
+{
+    "rules": {
+        "remove-unused-variables": "on",
+        "declare-imports-first": "on",
+        "merge-duplicate-imports": "on"
+
+    }
+}

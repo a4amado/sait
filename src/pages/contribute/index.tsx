@@ -1,12 +1,19 @@
-import { Flex, Button, Text, Center, Spinner, useToast } from '@chakra-ui/react'
+import {
+    Flex,
+    Button,
+    Text,
+    Center,
+    Spinner,
+    useToast,
+    useDisclosure,
+} from '@chakra-ui/react'
 import { useHotkeys } from 'react-hotkeys-hook'
 import PageContainer from '../../comp/pageContainer'
 import useRecorder from '@wmik/use-media-recorder'
 import React from 'react'
 import FormData from 'form-data'
-import { uploadBytes, ref } from 'firebase/storage'
-import { storage } from '../../firebase/init'
-import cuid from 'cuid'
+import { database } from '../../firebase/init'
+import { push, ref } from 'firebase/database'
 
 export default function Page() {
     ///////////////////////////////////////////////////////////
@@ -29,18 +36,22 @@ export default function Page() {
         sound.append('audio', recorder.mediaBlob)
     }, [recorder.status])
 
-    const [loading, setLoading] = React.useState(false)
-    const [_error, setError] = React.useState(false)
+    const { isOpen, onClose, onOpen } = useDisclosure()
+    const [, setError] = React.useState(false)
 
     const toast = useToast()
 
     async function submit() {
         try {
-            setLoading(true)
+            onOpen()
             setError(false)
             if (!recorder.mediaBlob) return false
-            // await uploadBytes(ref(storage, cuid()), recorder.mediaBlob)
-            setLoading(false)
+
+            await push(ref(database, '/words'), {
+                ar: 'كلمة عَربية.',
+            })
+
+            onClose()
             recorder.clearMediaBlob()
             recorder.clearMediaStream()
             toast({
@@ -52,8 +63,8 @@ export default function Page() {
                     flexDirection: 'row-reverse',
                 },
             })
-        } catch (error) {
-            setLoading(false)
+        } catch {
+            onClose()
             setError(true)
             toast({
                 description: 'ERROR',
@@ -66,8 +77,8 @@ export default function Page() {
 
     useHotkeys(
         'a',
-        (e) => {
-            if (recorder.status != 'recording') recorder.startRecording()
+        () => {
+            if (recorder.status !== 'recording') recorder.startRecording()
         },
         { keydown: true },
         [recorder.status]
@@ -75,7 +86,7 @@ export default function Page() {
 
     useHotkeys(
         'a',
-        (e) => {
+        () => {
             recorder.stopRecording()
         },
         { keyup: true },
@@ -84,7 +95,7 @@ export default function Page() {
 
     useHotkeys(
         's',
-        async (e) => {
+        async () => {
             await submit()
         },
         [recorder.status]
@@ -92,7 +103,7 @@ export default function Page() {
 
     useHotkeys(
         'd',
-        (e) => {
+        () => {
             audioRef.current.play()
         },
         [recorder.status]
@@ -108,21 +119,19 @@ export default function Page() {
                     <audio src={url} preload="" controls className="w-full" />
                 </Flex>
                 <Flex className="flex flex-row justify-stretch h-80 gap-2 my-2 mx-0 relative">
-                    <Center
-                        className={`${
-                            loading ? 'flex' : 'none'
-                        } flex-col absloute w-full h-full bg-slate-200 z-[9999]`}
-                    >
-                        <Spinner />
-                        <Text>إنتظر لحظة</Text>
-                    </Center>
+                    {isOpen && (
+                        <Center className="flex flex-col absolute w-full h-full bg-slate-200 z-[9999]">
+                            <Spinner />
+                            <Text>إنتظر لحظة</Text>
+                        </Center>
+                    )}
 
                     <Button
-                        border={`${
+                        border={String(
                             recorder.status === 'recording'
                                 ? '1px solid red'
                                 : ''
-                        }`}
+                        )}
                         onClick={() => recorder.startRecording()}
                         flexGrow={1}
                     >

@@ -16,6 +16,6 @@ export default nextConnect().get(
         const results = await result.search(q, {
             hitsPerPage: 6
         })
-        res.json(results.hits)
+        res.json(results.hits || [])
     }
 )

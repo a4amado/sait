@@ -13,7 +13,9 @@ export default nextConnect().get(
         const q = Array.isArray(req.query.q) ? req.query.q[0] : req.query.q
         if (!q) return res.status(404)
 
-        const results = await result.search(q)
+        const results = await result.search(q, {
+            length: 5,
+        })
         res.json(results.hits)
     }
 )

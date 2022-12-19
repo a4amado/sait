@@ -84,7 +84,7 @@ export default function Search() {
                     إبحث
                 </Button>
 
-                <Box className="w-full top-full absolute flex flex-col gap-1 p-1">
+                <Box className="w-full top-full absolute flex flex-col gap-1 p-1 z-[5] bg-slate-700	">
                     {!list[0]?.isEmpty() &&
                         activeItem &&
                         list[0]

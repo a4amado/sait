@@ -10,7 +10,7 @@ files/**.weba
 /coverage
 
 sait-5fd26-firebase-adminsdk-pt2g8-cb73d803be.json
-
+/.env
 # database
 /prisma/db.sqlite
 /prisma/db.sqlite-journal

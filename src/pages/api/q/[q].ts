@@ -14,7 +14,7 @@ export default nextConnect().get(
         if (!q) return res.status(404)
 
         const results = await result.search(q, {
-            maxFacetHits: 6
+            hitsPerPage: 6
         })
         res.json(results.hits)
     }

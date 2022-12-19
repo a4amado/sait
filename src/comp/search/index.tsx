@@ -64,7 +64,7 @@ export default function Search() {
             method="GET"
             action="/search"
             style={{ width: '100%', marginTop: '10px' }}
-            className="relative overflow-hidden	"
+            className="relative"
         >
             <div className="relative w-full flex flex-row">
                 <Input

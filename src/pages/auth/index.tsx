@@ -1,10 +1,8 @@
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import type { FieldConfig } from 'formik'
 import { Field, Form, Formik } from 'formik'
 import Head from 'next/head'
 import React from 'react'
 import * as yup from 'yup'
-
 import {
     Button,
     FormControl,
@@ -20,13 +18,12 @@ import {
 } from '@chakra-ui/react'
 
 import PageContainer from '../../comp/pageContainer'
-import { auth } from '../../firebase/init'
+
 
 function FeildConfigMK(props: FieldConfig): FieldConfig {
     return props
 }
 
-const GoogleAuth = new GoogleAuthProvider()
 
 export default function Page() {
     return (
@@ -52,9 +49,6 @@ export default function Page() {
                     <TabPanel>
                         <Register />
                     </TabPanel>
-                    <Button onClick={() => signInWithPopup(auth, GoogleAuth)}>
-                        signInWithPopup
-                    </Button>
                 </TabPanels>
             </Tabs>
         </PageContainer>
@@ -64,7 +58,8 @@ export default function Page() {
 function Register() {
     const initialValue = { email: '', password: '', checkbox: false }
 
-    // function Login() {}
+    // async function Login() {}
+    
     return (
         <Formik
             initialValues={initialValue}
@@ -81,9 +76,9 @@ function Register() {
             })}
             enableReinitialize
             onSubmit={() => {
-                const h = 's'
-                h
-            }} //{Login}
+                const g = "s"
+                g
+            }}
         >
             {(props) => (
                 <Form className="w-full" onSubmit={props.handleSubmit}>
@@ -131,7 +126,7 @@ function Register() {
 
 function Login() {
     const initialValue = { email: '', password: '' }
-    // function Login() {}
+   
     return (
         <Formik
             initialValues={initialValue}
@@ -144,9 +139,9 @@ function Login() {
             })}
             enableReinitialize
             onSubmit={() => {
-                const h = 's'
-                h
-            }} //{Login}
+                const g = "s"
+                g
+            }}
         >
             {(props) => (
                 <Form style={{ width: '100%' }} onSubmit={props.handleSubmit}>
@@ -173,6 +168,7 @@ function Login() {
                         />
                         <Text color="red">{props.errors.password}</Text>
                     </FormControl>
+                    
 
                     <FormControl>
                         <Button m="10px 0" type="submit">

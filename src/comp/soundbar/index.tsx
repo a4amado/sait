@@ -5,7 +5,7 @@ import { TbCopy } from 'react-icons/tb'
 import { Button, Center, Flex, Skeleton, useToast } from '@chakra-ui/react'
 
 import RateSoundPopOver from '../rate_sound_popover'
-import useFireBaseAudioURL from '../../hooks/useFireBaseAudioURL'
+
 
 interface SoundBarContext {
     key: string
@@ -14,23 +14,8 @@ interface SoundBarContext {
 
 export default function SoundBar(ctx: SoundBarContext) {
     const toast = useToast()
-    const url = useFireBaseAudioURL({
-        path: '/clbtd97500000356fpwc9p0s5',
-    })
-
-    if (url.isLoading) {
-        return (
-            <Flex
-                key={ctx.key}
-                border="1px solid #0088000f"
-                className="m-1 p-1 h-12 flex align-center justify-center hover:pointe"
-            >
-                <Skeleton className="w-dull h-full" isLoaded={url.isLoading}>
-                    لحظةََ من فضلك
-                </Skeleton>
-            </Flex>
-        )
-    }
+    
+  
 
     return (
         <Flex
@@ -46,10 +31,7 @@ export default function SoundBar(ctx: SoundBarContext) {
                             color: '#1677ff',
                         }}
                         className="p-1 border-spacing-1 border-cyan-200"
-                        onClick={() => {
-                            const aud = new Audio(url.url)
-                            aud.play()
-                        }}
+                        
                     >
                         <HiOutlineSpeakerWave />
                     </Button>

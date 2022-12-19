@@ -22,6 +22,9 @@ export default function Page() {
         mediaStreamConstraints: { audio: true, video: false },
         mediaRecorderOptions: { mime: 'audio/webm' },
     })
+
+  
+
     const audioRef = React.useRef<any>()
     const url = React.useMemo(() => {
         if (!recorder.mediaBlob) return ''
@@ -44,6 +47,9 @@ export default function Page() {
             onOpen()
             setError(false)
             if (!recorder.mediaBlob) return false
+            
+
+            
 
             onClose()
             recorder.clearMediaBlob()
@@ -92,6 +98,7 @@ export default function Page() {
         () => {
             submit()
         },
+        
         [recorder.status]
     )
 
@@ -107,7 +114,9 @@ export default function Page() {
         <PageContainer>
             <Flex className="flex flex-col w-full">
                 <Center className="h-80">
-                    <Text fontSize="7xl">السلام عليكم</Text>
+                    <Text fontSize="7xl">
+                        السلام عليكم
+                    </Text>
                 </Center>
                 <Flex className="w-full">
                     <audio src={url} preload="" controls className="w-full" />

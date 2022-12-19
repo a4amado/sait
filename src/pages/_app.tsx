@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
 import '../styles/globals.css'
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, PortalManager } from '@chakra-ui/react'
 import Loading from '../comp/loading'
 import React, { Suspense } from 'react'
 import { CacheProvider } from '@emotion/react'
@@ -13,8 +13,10 @@ const MyApp = ({ Component, pageProps: { ...pageProps } }: AppProps) => (
             <CacheProvider
                 value={createCache({ key: 'css-ar', stylisPlugins: [rtl] })}
             >
-                <Loading />
-                <Component {...pageProps} />
+                <PortalManager>
+                    <Loading />
+                    <Component {...pageProps} />
+                </PortalManager>
             </CacheProvider>
         </ChakraProvider>
     </Suspense>

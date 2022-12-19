@@ -12,8 +12,6 @@ import PageContainer from '../../comp/pageContainer'
 import useRecorder from '@wmik/use-media-recorder'
 import React from 'react'
 import FormData from 'form-data'
-import { database } from '../../firebase/init'
-import { push, ref } from 'firebase/database'
 
 export default function Page() {
     ///////////////////////////////////////////////////////////
@@ -41,15 +39,11 @@ export default function Page() {
 
     const toast = useToast()
 
-    async function submit() {
+    function submit() {
         try {
             onOpen()
             setError(false)
             if (!recorder.mediaBlob) return false
-
-            await push(ref(database, '/words'), {
-                ar: 'كلمة عَربية.',
-            })
 
             onClose()
             recorder.clearMediaBlob()
@@ -95,8 +89,8 @@ export default function Page() {
 
     useHotkeys(
         's',
-        async () => {
-            await submit()
+        () => {
+            submit()
         },
         [recorder.status]
     )

@@ -19,7 +19,6 @@ import {
     Text,
 } from '@chakra-ui/react'
 
-
 import PageContainer from '../../comp/pageContainer'
 import { auth } from '../../firebase/init'
 
@@ -65,10 +64,7 @@ export default function Page() {
 function Register() {
     const initialValue = { email: '', password: '', checkbox: false }
 
-    function Login() {
-        console.log("ss");
-        
-    }
+    // function Login() {}
     return (
         <Formik
             initialValues={initialValue}
@@ -84,7 +80,10 @@ function Register() {
                     .oneOf([true], 'هذا الحقل مطلوب'),
             })}
             enableReinitialize
-            onSubmit={Login}
+            onSubmit={() => {
+                const h = 's'
+                h
+            }} //{Login}
         >
             {(props) => (
                 <Form className="w-full" onSubmit={props.handleSubmit}>
@@ -132,10 +131,7 @@ function Register() {
 
 function Login() {
     const initialValue = { email: '', password: '' }
-    function Login() {
-        console.log("");
-        
-    }
+    // function Login() {}
     return (
         <Formik
             initialValues={initialValue}
@@ -147,7 +143,10 @@ function Login() {
                 password: yup.string().required('هذا الحقل مطلوب'),
             })}
             enableReinitialize
-            onSubmit={Login}
+            onSubmit={() => {
+                const h = 's'
+                h
+            }} //{Login}
         >
             {(props) => (
                 <Form style={{ width: '100%' }} onSubmit={props.handleSubmit}>

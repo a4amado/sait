@@ -21,7 +21,10 @@ export default function useFireBaseAudioURL(ctx: { path: string }) {
 
     React.useEffect(() => {
         onOpen()
-        getURL(ctx);
+        async function getURL() {
+            await getURL()
+        }
+        getURL()
     }, [])
 
     return {
